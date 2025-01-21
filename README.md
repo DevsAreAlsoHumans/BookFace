@@ -84,6 +84,7 @@ Le projet est basé sur le modèle **MVC (Modèle-Vue-Contrôleur)**, structuré
 
    ```bash
    HTTP : git clone https://github.com/DevsAreAlsoHumans/BookFace.git
+   ou en
    SSH : git clone git@github.com:DevsAreAlsoHumans/BookFace.git
    cd BookFace
 
