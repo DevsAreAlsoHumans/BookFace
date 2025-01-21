@@ -78,10 +78,4 @@ Le projet est basé sur le modèle **MVC (Modèle-Vue-Contrôleur)**, structuré
   - `reason` (raison du signalement)
   - `created_at` (date de signalement)
 
-## Installation
 
-1. Clonez ce dépôt :
-
-   ```bash
-   git clone https://github.com/username/forum-community.git
-   cd forum-community
