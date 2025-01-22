@@ -23,10 +23,6 @@
 - Ajout et affichage de catégories.
 - Association des publications à une catégorie.
 
-### Modération
-- Signalement des publications par les utilisateurs.
-- Gestion des signalements par un administrateur.
-
 ## Architecture MVC
 
 ### Dossier `models`
