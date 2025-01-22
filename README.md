@@ -49,7 +49,7 @@
 Contient toutes les classes de modèles gérant les interactions avec la base de données (Users, Posts, Categories, Comments).
 
 ### Dossier `controllers`
-Contient un seul fichier `MainController.php`, responsable de la gestion de toutes les requêtes (routes) et de la logique métier.
+Contient un seul fichier `Controller.php`, responsable de la gestion de toutes les requêtes (routes) et de la logique métier.
 
 ### Dossier `views`
 Contient les fichiers d’interface utilisateur pour afficher les pages (inscription, connexion, publications, etc.).
