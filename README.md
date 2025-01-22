@@ -8,7 +8,10 @@
 ```bash
     BookFace/
     ├── controllers/
-    │   └── Controller.js
+    │   └── GuestController.js
+    │   └── UserController.js
+    │   └── PostController.js
+    │   └── ...
     ├── models/
     │   └── User.php
     │   └── Post.php
@@ -18,6 +21,9 @@
     │   └── login.php
     │   └── register.php
     │   └── ...
+    ├── public/
+    │   └── assets/
+    │   │   └── ...
     ├── config/
     │   └── database.php
     ├── db/
