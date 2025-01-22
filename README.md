@@ -137,7 +137,11 @@ Clonez ce dépôt :
 ```bash
     HTTP : git clone https://github.com/DevsAreAlsoHumans/BookFace.git
     SSH : git clone git@github.com:DevsAreAlsoHumans/BookFace.git
+```
+Puis :
+```bash
     cd BookFace
 ```
+
 
 
