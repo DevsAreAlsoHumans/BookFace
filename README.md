@@ -89,7 +89,7 @@ Contient les fichiers d’interface utilisateur pour afficher les pages (inscrip
     - Les publications peuvent être triées par nombre de votes.
       
 9. **En tant qu'utilisateur, je veux pouvoir me déconnecter**
-    -La déconnexion doit supprimer la session active et rediriger l'utilisateur vers la page d'accueil.
+    - La déconnexion doit supprimer la session active et rediriger l'utilisateur vers la page d'accueil.
 
 ## Technologies utilisées
 
