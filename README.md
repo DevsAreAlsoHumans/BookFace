@@ -68,12 +68,17 @@ Contient les fichiers d’interface utilisateur pour afficher les pages (inscrip
 ## Users Stories et critères d’acceptation
 
 1. **En tant qu'utilisateur, je veux m'inscrire pour accéder aux fonctionnalités du forum.**
-    - L'inscription demande un nom d’utilisateur unique et un mot de passe.
-    - Un message d’erreur s’affiche si le nom d’utilisateur est déjà pris.
+    - Un formulaire d'inscription est disponible.
+    - L'utilisateur doit fournir un nom d’utilisateur unique et un mot de passe.
+    - Le nom d'utilisateur est validé pour s'assurer qu'il est unique.
+    - Le mot de passe est validé pour s'assurer qu'il contient au moins 8 caractères.
+    - Si les informations sont valides, un nouveau compte est créé et stocké dans la base de données.
+    - Si le nom d’utilisateur est déjà pris, un message d’erreur s’affiche.
 
 2. **En tant qu'utilisateur, je veux me connecter pour participer au forum.**
     - La connexion vérifie le nom d’utilisateur et le mot de passe.
     - Une session est créée une fois l’utilisateur connecté.
+    - Si le nom d’utilisateur ou le mot de passe est incorrect, un message d’erreur est affiché.
 
 3. **En tant qu'utilisateur, je veux publier un message pour partager mes idées.**
     - La publication a un titre, un contenu et une catégorie.
@@ -89,7 +94,9 @@ Contient les fichiers d’interface utilisateur pour afficher les pages (inscrip
     - Les publications peuvent être triées par nombre de votes.
       
 9. **En tant qu'utilisateur, je veux pouvoir me déconnecter**
-    - La déconnexion doit supprimer la session active et rediriger l'utilisateur vers la page d'accueil.
+    - Un bouton de déconnexion est disponible.
+    - Lorsque l’utilisateur clique sur le bouton de déconnexion, la session active est supprimée.
+    - Après la déconnexion, l’utilisateur est redirigé vers la page d’accueil.
 
 ## Technologies utilisées
 
