@@ -4,6 +4,19 @@
 
 **BookFace** est un forum communautaire permettant aux utilisateurs de poser des questions, partager leurs idées, commenter les publications, et discuter librement. L’application inclut un système d’utilisateurs, de votes sur les publications, et une organisation des contenus en catégories. Le projet sera structuré selon l'architecture MVC (Modèle-Vue-Contrôleur).
 
+## Structure du projet
+```bash
+    BookFace/
+    ├── controllers/
+    │   └── Controller.js
+    ├── models/
+    │   └── User.php
+    │   └── Post.php
+    │   └── Comment.php
+    │   └── Categorie.php
+    ├── views/
+```
+
 ## Fonctionnalités principales
 
 ### Gestion des utilisateurs
@@ -117,4 +130,5 @@ Clonez ce dépôt :
 ```bash
 git clone https://github.com/DevsAreAlsoHumans/BookFace.git
 cd BookFace
+
 
