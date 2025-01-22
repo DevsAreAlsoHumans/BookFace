@@ -15,6 +15,13 @@
     │   └── Comment.php
     │   └── Categorie.php
     ├── views/
+    │   └── ...
+    ├── config/
+    │   └── database.php
+    ├── db/
+    │   └── data_bookface.php
+    ├── index.js
+    └── README.md
 ```
 
 ## Fonctionnalités principales
