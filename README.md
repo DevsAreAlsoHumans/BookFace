@@ -15,6 +15,8 @@
     │   └── Comment.php
     │   └── Categorie.php
     ├── views/
+    │   └── login.php
+    │   └── register.php
     │   └── ...
     ├── config/
     │   └── database.php
