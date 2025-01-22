@@ -68,11 +68,6 @@ Contient les fichiers d’interface utilisateur pour afficher les pages (inscrip
 - `post_id` : Référence à la publication.
 - `created_at` : Date de création.
 
-### Table `reports`
-- `id` : Identifiant unique.
-- `post_id` : Référence à la publication signalée.
-- `reason` : Raison du signalement.
-- `created_at` : Date de signalement.
 
 ## Users Stories et critères d’acceptation
 
@@ -93,13 +88,6 @@ Contient les fichiers d’interface utilisateur pour afficher les pages (inscrip
 
 5. **En tant qu'utilisateur, je veux voter sur les publications pour exprimer mon avis.**
     - Les boutons de vote mettent à jour le nombre d’upvotes ou de downvotes.
-
-6. **En tant qu'utilisateur, je veux signaler une publication inappropriée pour améliorer la qualité du forum.**
-    - Le signalement est enregistré avec une raison.
-    - Les administrateurs peuvent consulter et gérer les signalements.
-
-7. **En tant qu'administrateur, je veux modérer les contenus pour maintenir un environnement sain.**
-    - Les administrateurs peuvent supprimer les publications signalées.
 
 8. **En tant qu'utilisateur, je veux voir les publications les plus populaires pour découvrir les sujets tendance.**
     - Les publications peuvent être triées par nombre de votes.
