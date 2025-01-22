@@ -135,7 +135,9 @@ Contient les fichiers d’interface utilisateur pour afficher les pages (inscrip
 Clonez ce dépôt :
 
 ```bash
-git clone https://github.com/DevsAreAlsoHumans/BookFace.git
-cd BookFace
+    HTTP : git clone https://github.com/DevsAreAlsoHumans/BookFace.git
+    SSH : git clone git@github.com:DevsAreAlsoHumans/BookFace.git
+    cd BookFace
+```
 
 
