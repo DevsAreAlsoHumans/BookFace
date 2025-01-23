@@ -1,24 +1,34 @@
 <?php
-include_once './models/Post.php';
-include_once './models/User.php';
+require_once __DIR__ . '/models/Post.php';
+require_once __DIR__ . '/models/User.php';
+require_once __DIR__ . '/controllers/UserController.php';
 session_start();
+
+$userController = new UserController();
 
 // Récupérer l'URL demandée
 $request = $_SERVER['REQUEST_URI'];
 
+$userController = new UserController();
 
 // Gérer les routes
 switch ($request) {
-    case '/':
+    case '/BookFace/BookFace':
         break;
 
-    case '/login':
+    case '/BookFace/BookFace/home':
         break;
 
-    case '/register':
+    case '/BookFace/BookFace/login':
+        $userController->loginUser();
         break;
 
-    case '/logout':
+    case '/BookFace/BookFace/register':
+        $userController->addUser();
+        break;
+
+    case '/BookFace/BookFace/logout':
+        $userController->lougoutUser();
         break;
 
     default:

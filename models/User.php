@@ -27,7 +27,11 @@ class User
             $password = password_hash($password, PASSWORD_DEFAULT);
             $stmt->bindParam(':username', $login);
             $stmt->bindParam(':password', $password);
-            return $stmt->execute();
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return "error";
+            }
         } catch (PDOException $e) {
             // Log de l'erreur (optionnel, à configurer selon votre système)
             error_log("Erreur lors de l'insertion de l'utilisateur: " . $e->getMessage());
@@ -46,7 +50,7 @@ class User
             if ($user && password_verify($password, $user['password'])) {
                 return $user;
             } else {
-                return "Incorrect Password";
+                return "Identifiant ou Mot de passe incorrect";
             }
         } catch (PDOException $e) {
             // Log de l'erreur (optionnel, à configurer selon votre système)
