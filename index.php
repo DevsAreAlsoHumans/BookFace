@@ -1,4 +1,5 @@
 <?php 
+include_once './models/Post.php';
 session_start();
 
 // Récupérer l'URL demandée
@@ -20,7 +21,7 @@ switch ($request) {
         break;
 
     default:
-        require_once __DIR__ . '/app/views/404.php';
+        require_once __DIR__ . '/views/404.php';
         break;
 }
 
