@@ -5,17 +5,8 @@ require_once __DIR__ . '/controllers/UserController.php';
 require_once __DIR__ . '/controllers/PostController.php';
 session_start();
 
-$userController = new UserController();
-
 // Récupérer l'URL demandée
 $request = $_SERVER['REQUEST_URI'];
-
-if(!(isset($_SESSION['user_id']) && isset($_SESSION['username']))) {
-    if($request != '/BookFace/BookFace/login' && $request != '/BookFace/BookFace/register') {
-        header('Location: /BookFace/BookFace/login');
-        exit();
-    }
-}
 
 $userController = new UserController();
 $postController = new PostController();
