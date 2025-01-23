@@ -1,37 +1,29 @@
 <?php
-include_once './models/Post.php';
-include_once './models/User.php';
-include_once './controllers/UserController.php';
+require_once __DIR__ . '/models/Post.php';
+require_once __DIR__ . '/models/User.php';
+require_once __DIR__ . '/controllers/UserController.php';
 session_start();
 
 $userController = new UserController();
 
 // Récupérer l'URL demandée
 $request = $_SERVER['REQUEST_URI'];
-$request = strtok($request, "?");
-//var_dump($request);
+
+$userController = new UserController();
+
 // Gérer les routes
 switch ($request) {
-    case '/BookFace/BookFace/':
+    case '/BookFace/BookFace':
+        break;
+
+    case '/BookFace/BookFace/home':
         break;
 
     case '/BookFace/BookFace/login':
+        $userController->loginUser();
         break;
 
     case '/BookFace/BookFace/register':
-
-        /*if (isset($_GET['action'])) {
-            switch ($_GET['action']) {
-                case 'BookFace/BookFace/register':
-                    $controller->addUser($login, $password);
-                    break;
-                default:
-                    echo "Action inconnue.";
-                    break;
-            }
-        } else {
-            $controller->ShowRegister();
-        }*/
         break;
 
     case '/BookFace/BookFace/logout':

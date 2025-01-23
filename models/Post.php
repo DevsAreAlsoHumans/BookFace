@@ -30,6 +30,17 @@ class Post {
             return "Error SQL : " . $e->getMessage();
         }
     }
-}
 
+    public function getPostsByUser($userId) {
+        try {
+            $sql = "SELECT * FROM posts WHERE user_id = :user_id ORDER BY created_at DESC";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            return "Error SQL : " . $e->getMessage();
+        }
+    }
+}
 ?>
