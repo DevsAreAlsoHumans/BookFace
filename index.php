@@ -3,13 +3,11 @@ require_once __DIR__ . '/models/Post.php';
 require_once __DIR__ . '/models/User.php';
 require_once __DIR__ . '/controllers/UserController.php';
 session_start();
-
-$userController = new UserController();
-
 // Récupérer l'URL demandée
 $request = $_SERVER['REQUEST_URI'];
 
 $userController = new UserController();
+// $post = new Post();
 
 // Gérer les routes
 switch ($request) {
@@ -29,6 +27,10 @@ switch ($request) {
 
     case '/BookFace/BookFace/logout':
         $userController->lougoutUser();
+        break;
+
+    case '/BookFace/BookFace/posts-details':
+        // var_dump($post->getPostDetaille(1));
         break;
 
     default:

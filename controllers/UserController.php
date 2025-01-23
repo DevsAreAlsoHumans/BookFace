@@ -3,7 +3,7 @@ require_once __DIR__ . '/../config/database.php';
 
 class UserController
 {
-    private $userModel;
+    // private $userModel;
 
     public function __construct() {}
 
