@@ -124,7 +124,7 @@ Contient les fichiers d’interface utilisateur pour afficher les pages (inscrip
 9. **En tant qu'utilisateur, je veux pouvoir me déconnecter**
     - Un bouton de déconnexion est disponible.
     - Lorsque l’utilisateur clique sur le bouton de déconnexion, la session active est supprimée.
-    - Après la déconnexion, l’utilisateur est redirigé vers la page d’accueil.
+    - Après la déconnexion, l’utilisateur est redirigé vers la page de connexion.
 
 ## Technologies utilisées
 
