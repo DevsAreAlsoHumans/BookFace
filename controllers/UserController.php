@@ -48,4 +48,11 @@ class UserController
         }
         require_once __DIR__ . '/../views/login.php';
     }
+
+    public function lougoutUser(): void
+    {
+        session_destroy();
+        header('Location: /BookFace/BookFace/login');
+        exit();
+    }
 }

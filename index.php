@@ -28,6 +28,7 @@ switch ($request) {
         break;
 
     case '/BookFace/BookFace/logout':
+        $userController->lougoutUser();
         break;
 
     default:

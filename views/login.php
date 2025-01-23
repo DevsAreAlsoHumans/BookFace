@@ -17,7 +17,8 @@
         <label for="password">Mot de passe:</label>
         <input type="password" name="password" id="password" required><br>
         <span> <?= isset($error) ? htmlspecialchars($error) : '' ?> </span>
-        <button type="submit">Se connecter</button>
+        <button type="submit">Se connecter</button><br>
+        <a href="/BookFace/BookFace/register">S'inscrire</a>
     </form>
 
 
