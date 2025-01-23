@@ -46,7 +46,7 @@ class User
             if ($user && password_verify($password, $user['password'])) {
                 return $user;
             } else {
-                return "Incorrect Password";
+                return "Mot de passe incorrect";
             }
         } catch (PDOException $e) {
             // Log de l'erreur (optionnel, à configurer selon votre système)

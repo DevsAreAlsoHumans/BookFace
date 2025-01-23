@@ -5,9 +5,9 @@ class UserController
 {
     private $userModel;
 
-    public function __construct($db)
+    public function __construct()
     {
-        $this->userModel = new User($db);
+       
     }
 
     public function addUser($login, $password)
@@ -33,5 +33,28 @@ class UserController
                 echo "Une erreur interne est survenue. Veuillez réessayer plus tard.";
             }
         }
+    }
+
+    public function loginUser(): void
+    {
+        $error = "";
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $login = $_POST['username'] ?? '';
+            $password = $_POST['password'] ?? '';
+
+            $userModel = new User();
+            $user = $userModel->loginUser($login, $password);
+
+            if ($user && !is_string($user)) {
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['user_id'] = $user['user_id'];
+                header("Location: /BookFace/BookFace/home");
+                exit();
+            } else {
+                $error = $user;
+            }
+        } 
+        require_once __DIR__ . '/../views/login.php';
+    
     }
 }
