@@ -5,10 +5,7 @@ class UserController
 {
     private $userModel;
 
-    public function __construct($db)
-    {
-        $this->userModel = new User($db);
-    }
+    public function __construct() {}
 
     public function addUser($login, $password)
     {
@@ -16,11 +13,11 @@ class UserController
             try {
                 $login = $_POST['username'];
                 $password = $_POST['password'];
-
                 if (!empty($login) && !empty($password)) {
                     $inserted = $this->userModel->insertUser($login, $password);
+                    //var_dump($inserted);
                     if ($inserted) {
-                        header("Location: success.php");
+                        header("Location: login.php");
                         exit();
                     } else {
                         echo "Une erreur est survenue lors de l'ajout de l'utilisateur.";
@@ -33,5 +30,10 @@ class UserController
                 echo "Une erreur interne est survenue. Veuillez réessayer plus tard.";
             }
         }
+    }
+
+    public function ShowRegister()
+    {
+        include_once 'views/register.php';
     }
 }
