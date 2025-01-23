@@ -1,6 +1,8 @@
-<?php 
+<?php
+include_once('./models/User.php');
 session_start();
-
+$user = new User();
+var_dump($user->loginUser("Franck", "1258"));
 // Récupérer l'URL demandée
 $request = $_SERVER['REQUEST_URI'];
 
@@ -20,9 +22,6 @@ switch ($request) {
         break;
 
     default:
-        require_once __DIR__ . '/app/views/404.php';
+        require_once __DIR__ . '/views/404.php';
         break;
 }
-
-
-?>
