@@ -15,10 +15,9 @@ class Post {
             $stmt->bindParam(':title', $title, PDO::PARAM_STR);
             $stmt->bindParam(':content', $content, PDO::PARAM_STR);
             $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-            $stmt->execute();
-            echo "Post created successfully.";
+            return $stmt->execute();
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            return "Error SQL : " . $e->getMessage();
         }
     }
 
@@ -28,7 +27,7 @@ class Post {
             $stmt = $this->db->query($sql);
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            return "Error SQL : " . $e->getMessage();
         }
     }
 }
