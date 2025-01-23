@@ -5,6 +5,8 @@ require_once __DIR__ . '/controllers/UserController.php';
 require_once __DIR__ . '/controllers/PostController.php';
 session_start();
 
+$userController = new UserController();
+
 // Récupérer l'URL demandée
 $request = $_SERVER['REQUEST_URI'];
 
@@ -37,6 +39,7 @@ switch ($request) {
         break;
 
     case '/BookFace/BookFace/logout':
+        $userController->lougoutUser();
         break;
 
     default:
