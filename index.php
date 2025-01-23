@@ -24,6 +24,7 @@ switch ($request) {
         break;
 
     case '/BookFace/BookFace/register':
+        $userController->addUser();
         break;
 
     case '/BookFace/BookFace/logout':
