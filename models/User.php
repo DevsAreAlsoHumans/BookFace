@@ -42,7 +42,7 @@ class User
     public function loginUser($login, $password)
     {
         try {
-            $sql = "SELECT username, password FROM users WHERE username = :username";
+            $sql = "SELECT id, username, password FROM users WHERE username = :username";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':username', $login);
             $stmt->execute();
@@ -53,7 +53,6 @@ class User
                 return "Identifiant ou Mot de passe incorrect";
             }
         } catch (PDOException $e) {
-            // Log de l'erreur (optionnel, à configurer selon votre système)
             error_log("Erreur lors de la recherche de l'utilisateur: " . $e->getMessage());
             return false;
         }

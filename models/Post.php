@@ -27,11 +27,27 @@ class Post
     public function getAllPosts()
     {
         try {
-            $sql = "SELECT * FROM posts ORDER BY created_at DESC";
-            $stmt = $this->db->query($sql);
+            $query = "
+                SELECT 
+                    posts.id AS post_id,
+                    posts.title,
+                    posts.content,
+                    posts.votes_up,
+                    posts.votes_down,
+                    posts.created_at AS post_created_at,
+                    users.id AS user_id,
+                    users.username AS author_username,
+                    users.created_at AS user_created_at
+                FROM posts
+                INNER JOIN users ON posts.user_id = users.id
+                ORDER BY posts.created_at DESC
+            ";
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            return "Error SQL : " . $e->getMessage();
+            error_log("Erreur SQL : " . $e->getMessage());
+            return "Erreur SQL : " . $e->getMessage();
         }
     }
 

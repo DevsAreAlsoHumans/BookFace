@@ -39,7 +39,7 @@ class UserController
 
             if ($user && !is_string($user)) {
                 $_SESSION['username'] = $user['username'];
-                $_SESSION['user_id'] = $user['user_id'];
+                $_SESSION['user_id'] = $user['id'];
                 header("Location: /BookFace/BookFace/home");
                 exit();
             } else {
