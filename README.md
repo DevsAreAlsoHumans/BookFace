@@ -21,9 +21,10 @@
     │   └── login.php
     │   └── register.php
     │   └── ...
-    ├── public/
-    │   └── assets/
+    ├── assets/
+    │   └── css/
     │   │   └── ...
+    │   └── ...
     ├── config/
     │   └── database.php
     ├── db/
