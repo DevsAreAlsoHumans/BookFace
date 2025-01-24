@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/models/Comment.php';
 require_once __DIR__ . '/models/Post.php';
 require_once __DIR__ . '/models/User.php';
 require_once __DIR__ . '/controllers/UserController.php';
@@ -7,9 +8,13 @@ session_start();
 
 // Récupérer l'URL demandée
 $request = $_SERVER['REQUEST_URI'];
+$request = strtok($request, '?');
 
 $userController = new UserController();
+// $post = new Post();
 $postController = new PostController();
+$post = new Post();
+$comments = new Comment();
 
 // Gérer les routes
 switch ($request) {
@@ -33,12 +38,25 @@ switch ($request) {
         $userController->lougoutUser();
         break;
 
+    case '/BookFace/BookFace/post-detail':
+        // var_dump($comments->showComments(1));
+        if (isset($_GET['id'])) {
+            $postController->showGetPostDetail(($_GET['id']));
+            // var_dump($post->getPostDetaille(($_GET['id'])));
+        } else {
+            require_once __DIR__ . '/views/404.php';
+        }
+        break;
+
+    case '/BookFace/BookFace/profile':
+        // var_dump($post->getPostsByUser(1));
+        break;
+
     case '/BookFace/BookFace/publish':
-        $postController->addPost();
+        $postController->publish();
         break;
 
     default:
         require_once __DIR__ . '/views/404.php';
         break;
 }
-?>
