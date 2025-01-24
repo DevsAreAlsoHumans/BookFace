@@ -49,7 +49,8 @@ switch ($request) {
         break;
 
     case '/BookFace/BookFace/profile':
-        // var_dump($post->getPostsByUser(1));
+        $postController->showGetProfile();
+        // var_dump($post->getPostsByUser());
         break;
 
     case '/BookFace/BookFace/publish':
