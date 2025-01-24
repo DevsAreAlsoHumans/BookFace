@@ -33,6 +33,10 @@ switch ($request) {
         $userController->lougoutUser();
         break;
 
+    case '/BookFace/BookFace/publish':
+        $postController->addPost();
+        break;
+
     default:
         require_once __DIR__ . '/views/404.php';
         break;
