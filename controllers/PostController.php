@@ -38,9 +38,16 @@ class PostController
         require_once 'views/post_detail.php';
     }
 
-    public function showGetProfile($user_id)
+    public function showGetProfile()
     {
+        if (!(isset($_SESSION['user_id']) && isset($_SESSION['username']))) {
+            header('Location: /BookFace/BookFace/login');
+            exit();
+        }
+        $user_id = $_SESSION['user_id'];
+        $username = $_SESSION['username'];
         $profileModel = new Post();
-        $profile = $profileModel->getPostsByUser($user_id);
+        $profiles = $profileModel->getPostsByUser($user_id);
+        require_once 'views/profile.php';
     }
 }

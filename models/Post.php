@@ -54,7 +54,8 @@ class Post
     public function getPostsByUser($userId)
     {
         try {
-            $sql = "SELECT posts.title, posts.content, posts.created_at , users.username FROM posts WHERE user_id = :user_id ORDER BY created_at DESC";
+            $sql = "SELECT posts.id, posts.title, posts.content, posts.created_at , users.username FROM posts
+            JOIN users ON posts.user_id = users.id WHERE user_id = :user_id ORDER BY created_at DESC";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
             $stmt->execute();
@@ -67,8 +68,9 @@ class Post
     public function getPostDetaille($post_id)
     {
         try {
-            $sql = "SELECT title, posts.content, categories.name, posts.created_at FROM categories
-            JOIN posts ON posts.category_id = categories.id WHERE posts.id = :id";
+            $sql = "SELECT title, posts.content, categories.name, posts.created_at, users.username, votes_up ,votes_down FROM categories
+            JOIN posts ON posts.category_id = categories.id 
+            JOIN users ON users.id = posts.user_id WHERE posts.id = :id";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':id', $post_id, PDO::PARAM_INT);
             $stmt->execute();
