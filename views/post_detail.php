@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Post</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,28 +54,24 @@
     </style>
 </head>
 
+
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="/BookFace/BookFace/home">Accueil</a>
         <a href="/BookFace/BookFace/profile">Profil</a>
         <a href="/BookFace/BookFace/logout">Déconnexion</a>
     </nav>
-
-    <h1 style="margin-left: 20px;">Accueil</h1>
-    <?php if (!empty($posts)): ?>
-        <?php foreach ($posts as $post): ?>
-            <a href=<?= "/BookFace/BookFace/post-detail?id=" . htmlspecialchars($post['post_id']); ?>>
-                <div class="post">
-                    <h2><?= htmlspecialchars($post['title']); ?></h2>
-                    <p><?= nl2br(htmlspecialchars($post['content'])); ?></p>
-                    <small>Posté par l'utilisateur : <?= htmlspecialchars($post['author_username']); ?>
-                        le <?= htmlspecialchars($post['post_created_at']); ?></small>
-                </div>
-            </a>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <p style="margin-left: 20px;">Aucun post disponible.</p>
+    <?php if (isset($posts)) : ?>
+        <h1><?= htmlspecialchars($posts['title']); ?></h1>
+        <p><strong>Catégorie :</strong> <?= htmlspecialchars($posts['name']); ?></p>
+        <p><?= nl2br(htmlspecialchars($posts['content'])); ?></p>
+        <p><em>Publié le :</em> <?= $posts['created_at']; ?></p>
+        <?php foreach ($comments as $comment): ?>
+            <p><strong>Comments :</strong> </p>
+            <p><?= htmlspecialchars($comment['content']); ?></p>
+        <?php endforeach ?>
+    <?php elseif ($posts == null): ?>
+        <p>Post introuvable.</p>
     <?php endif; ?>
 </body>
 
