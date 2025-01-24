@@ -54,7 +54,7 @@ class Post
     public function getPostsByUser($userId)
     {
         try {
-            $sql = "SELECT * FROM posts WHERE user_id = :user_id ORDER BY created_at DESC";
+            $sql = "SELECT posts.title, posts.content, posts.created_at , users.username FROM posts WHERE user_id = :user_id ORDER BY created_at DESC";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
             $stmt->execute();

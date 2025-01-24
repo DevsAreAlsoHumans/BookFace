@@ -20,6 +20,10 @@ class PostController
 
     public function showGetPostDetail($post_id)
     {
+        if (!(isset($_SESSION['user_id']) && isset($_SESSION['username']))) {
+            header('Location: /BookFace/BookFace/login');
+            exit();
+        }
         $postModel = new Post();
         $commentModel = new Comment();
         $posts = $postModel->getPostDetaille($post_id);
@@ -32,5 +36,11 @@ class PostController
         // var_dump($comments);
         // var_dump($posts);
         require_once 'views/post_detail.php';
+    }
+
+    public function showGetProfile($user_id)
+    {
+        $profileModel = new Post();
+        $profile = $profileModel->getPostsByUser($user_id);
     }
 }
