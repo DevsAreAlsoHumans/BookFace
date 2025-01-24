@@ -58,6 +58,7 @@
 <body>
     <nav class="navbar">
         <a href="/BookFace/BookFace/home">Accueil</a>
+        <a href="/BookFace/BookFace/publish">Publier</a>
         <a href="/BookFace/BookFace/profile">Profil</a>
         <a href="/BookFace/BookFace/logout">Déconnexion</a>
     </nav>

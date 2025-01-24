@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/css/home.css" rel="stylesheet">
     <title>Accueil</title>
     <style>
         body {
@@ -58,6 +59,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="/BookFace/BookFace/home">Accueil</a>
+        <a href="/BookFace/BookFace/publish">Publier</a>
         <a href="/BookFace/BookFace/profile">Profil</a>
         <a href="/BookFace/BookFace/logout">Déconnexion</a>
     </nav>
