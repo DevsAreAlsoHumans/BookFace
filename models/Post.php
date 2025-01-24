@@ -67,12 +67,11 @@ class Post
     public function getPostDetaille($post_id)
     {
         try {
-            $sql = "SELECT title, content, categories.name, posts.created_at FROM posts 
-            JOIN categories ON posts.category_id = categories.id WHERE posts.id = :id";
+            $sql = "SELECT title, posts.content, categories.name, posts.created_at FROM categories
+            JOIN posts ON posts.category_id = categories.id WHERE posts.id = :id";
             $stmt = $this->db->prepare($sql);
             $stmt->bindParam(':id', $post_id, PDO::PARAM_INT);
             $stmt->execute();
-            // var_dump($stmt->fetchAll(PDO::FETCH_ASSOC));
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             return "Error SQL : " . $e->getMessage();
