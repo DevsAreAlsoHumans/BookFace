@@ -38,6 +38,29 @@ class PostController
         require_once 'views/post_detail.php';
     }
 
+    public function publish()
+    {
+        if (!(isset($_SESSION['user_id']) && isset($_SESSION['username']))) {
+            header('Location: /BookFace/BookFace/login');
+            exit();
+        }
+        $error = "";
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $title = $_POST['title'];
+            $content = $_POST['content'];
+            $user_id = $_SESSION['user_id'];
+            $postModel = new Post();
+            $inserted = $postModel->createPost($title, $content, $user_id);
+            if ($inserted) {
+                header("Location: /BookFace/BookFace/home");
+                exit();
+            } else {
+                $error = $inserted;
+            }
+        }
+        require_once __DIR__ . '/../views/publish.php';
+    }
+
     public function showGetProfile()
     {
         if (!(isset($_SESSION['user_id']) && isset($_SESSION['username']))) {

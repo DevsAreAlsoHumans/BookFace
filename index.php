@@ -47,10 +47,16 @@ switch ($request) {
             require_once __DIR__ . '/views/404.php';
         }
         break;
+
     case '/BookFace/BookFace/profile':
         $postController->showGetProfile();
         // var_dump($post->getPostsByUser());
         break;
+
+    case '/BookFace/BookFace/publish':
+        $postController->publish();
+        break;
+
     default:
         require_once __DIR__ . '/views/404.php';
         break;

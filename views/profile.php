@@ -4,60 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/BookFace/BookFace/assets/css/profile.css" rel="stylesheet">
     <title>Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .navbar a:hover {
-            background-color: #0056b3;
-        }
-
-        .post {
-            border: 1px solid #ddd;
-            margin: 20px 20px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .post h2 {
-            margin: 0;
-        }
-
-        .post p {
-            margin: 5px 0;
-        }
-
-        .post small {
-            color: #666;
-        }
-    </style>
-</head>
 </head>
 
 <body>
     <nav class="navbar">
         <a href="/BookFace/BookFace/home">Accueil</a>
+        <a href="/BookFace/BookFace/publish">Publier</a>
         <a href="/BookFace/BookFace/profile">Profil</a>
         <a href="/BookFace/BookFace/logout">Déconnexion</a>
     </nav>
